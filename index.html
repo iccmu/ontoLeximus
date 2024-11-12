@@ -121,6 +121,25 @@
             border-radius: 8px;
             padding: 20px;
             border: 1px solid #e1e1e1;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .example pre {
+            margin: 0;
+            padding: 0;
+            background: none;
+        }
+
+        .example h3 {
+            position: sticky;
+            top: 0;
+            background-color: #f8f9fa;
+            margin-top: 0;
+            padding: 0 0 10px 0;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #e1e1e1;
+            z-index: 1;
         }
 
         #mynetwork {
@@ -221,20 +240,74 @@
             <div class="content-wrapper">
                 <div class="example">
                     <h3>Ejemplo de Ontología Musical:</h3>
-                    <pre id="exampleYaml">name: John Doe
-Person:
-  description: A software developer
-  memberOf:
-    Organization:
-      name: Tech Company
-      description: A company specializing in tech solutions
-  knows:
-    - Person:
-        name: Jane Smith
-        description: A project manager
-    - Person:
-        name: Emily Johnson
-        description: A UX designer</pre>
+                    <pre id="exampleYaml">Flamenco:
+  description: Género musical y danza tradicional de Andalucía
+  subGenres:
+    - Bulería:
+        description: Palo flamenco festero y rápido
+        compás: 12 tiempos
+    - Soleá:
+        description: Palo flamenco profundo y solemne
+        compás: 12 tiempos
+    - Seguiriya:
+        description: Palo flamenco dramático
+        compás: 5 tiempos
+  instruments:
+    - Instrument:
+        name: Guitarra Flamenca
+        type: Cordófono
+        description: Instrumento principal del flamenco
+    - Instrument:
+        name: Cajón Flamenco
+        type: Percusión
+        description: Instrumento de percusión básico
+  artists:
+    - Artist:
+        name: Paco de Lucía
+        birthYear: 1947
+        deathYear: 2014
+        role: Guitarrista
+        famousWorks:
+          - MusicalWork:
+              name: Entre Dos Aguas
+              year: 1973
+              style: Rumba Flamenca
+          - MusicalWork:
+              name: Almoraima
+              year: 1976
+              style: Bulería
+    - Artist:
+        name: Camarón de la Isla
+        birthYear: 1950
+        deathYear: 1992
+        role: Cantaor
+        collaborations:
+          - Artist:
+              name: Paco de Lucía
+              relationship: Dúo musical
+        famousWorks:
+          - MusicalWork:
+              name: La Leyenda del Tiempo
+              year: 1979
+              style: Flamenco Fusión
+  musicalElements:
+    - Element:
+        name: Compás
+        description: Estructura rítmica fundamental
+    - Element:
+        name: Falseta
+        description: Interludio instrumental de guitarra
+    - Element:
+        name: Palmas
+        description: Acompañamiento rítmico con las manos
+  venues:
+    - Venue:
+        name: Tablao Flamenco
+        description: Lugar tradicional de espectáculos flamencos
+        elements:
+          - escenario
+          - cuadro flamenco
+          - público</pre>
                 </div>
 
                 <textarea id="yamlInput" placeholder="Escribe tu ontología usando YAML..."></textarea>
